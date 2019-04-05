@@ -307,18 +307,18 @@ Zebra.prototype.eventScannerAppeared = function(scanner) {
 }
 
 // - (void) sbtEventScannerDisappeared:(int)scannerID;
-Zebra.prototype.ZebraScannerDisappeared = function(scannerID) {
-    cordova.fireDocumentEvent('zebra.scannerDisappeared', { detail: { scannerID: scannerID }});
+Zebra.prototype.ZebraScannerDisappeared = function(scanner) {
+    cordova.fireDocumentEvent('zebra.scannerDisappeared', { detail: { scanner: scanner }});
 }
 
 // - (void) sbtEventCommunicationSessionEstablished:(SbtScannerInfo*)activeScanner;
-Zebra.prototype.ZebraCommunicationSessionEstablished = function(scannerID) {
-    cordova.fireDocumentEvent('zebra.communicationSessionEstablished', { detail: { scannerID: scannerID }});
+Zebra.prototype.ZebraCommunicationSessionEstablished = function(scanner) {
+    cordova.fireDocumentEvent('zebra.communicationSessionEstablished', { detail: { scanner: scanner }});
 }
 
 // - (void) sbtEventCommunicationSessionTerminated:(int)scannerID;
-Zebra.prototype.ZebraCommunicationSessionTerminated = function(scannerID) {
-    cordova.fireDocumentEvent('zebra.communicationSessionTerminated', { detail: { scannerID: scannerID }});
+Zebra.prototype.ZebraCommunicationSessionTerminated = function(scanner) {
+    cordova.fireDocumentEvent('zebra.communicationSessionTerminated', { detail: { scanner: scanner }});
 }
 
 // - (void) sbtEventBarcodeData:(NSData *)barcodeData barcodeType:(int)barcodeType fromScanner:(int)scannerID;
